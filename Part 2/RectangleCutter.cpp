@@ -16,7 +16,7 @@ RectangleCutter::~RectangleCutter()
 
 void RectangleCutter::cutter(rectangle &obj)
 {
-	if (l_y >= obj.right_y) // рабочая область не пересекается с прямоугольником и выше по кординатам
+	if (l_y >= obj.right_y) // working area dont cross the rectangle and has the upper cordinates
 	{
 		if (l_x >= obj.right_x)
 		{
@@ -58,7 +58,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
 	}
 
-	else if (r_y <= obj.left_y) // рабочая область не пересекается с прямоугольником и ниже по кординатам
+	else if (r_y <= obj.left_y) // working area dont cross the rectangle and has the lower cordinates
 	{
 		if (r_x <= obj.left_x)
 		{
@@ -100,7 +100,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
 	}
 
-	else if (r_x <= obj.left_x) // рабочая область не пересекается с прямоугольником и левее по кординатам
+	else if (r_x <= obj.left_x) // working area dont cross the rectangle and situated on the left side
 	{
 		if (r_y >= obj.right_y && l_y <= obj.left_y)
 		{
@@ -128,7 +128,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
 	}
 
-	else if (l_x >= obj.right_x) // рабочая область не пересекается с прямоугольником и правее по кординатам
+	else if (l_x >= obj.right_x) // working area dont cross the rectangle and situated on the right side
 	{
 		if (r_y >= obj.right_y && l_y <= obj.left_y)
 		{
@@ -156,7 +156,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
 	}
 
-	else if (r_x >= obj.left_x && l_x <= obj.left_x) // пересечение по правой стороне
+	else if (r_x >= obj.left_x && l_x <= obj.left_x) // crossing from left side
 	{	
 		if (r_y >= obj.right_y && l_y >= obj.left_y)
 		{
@@ -176,7 +176,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
     }
 
-	else if (r_x <= obj.right_x && l_x >= obj.left_x) // пересечение по центру
+	else if (r_x <= obj.right_x && l_x >= obj.left_x) // crossing in the middle
 	{
 		if (r_y >= obj.right_y && l_y >= obj.left_y)
 		{
@@ -199,7 +199,7 @@ void RectangleCutter::cutter(rectangle &obj)
 		}
 	}
 
-	else if (r_x >= obj.right_x && l_x <= obj.right_x) // пересечение по левой стороне
+	else if (r_x >= obj.right_x && l_x <= obj.right_x) // crossing from right side
 	{
 		if (r_y >= obj.right_y && l_y >= obj.left_y)
 		{
